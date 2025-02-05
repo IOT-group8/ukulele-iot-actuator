@@ -1,0 +1,64 @@
+# Ignore build artifacts
+/build/
+*.elf
+*.bin
+*.map
+*.log
+*.bak
+*.a
+*.o
+*.d
+*.lst
+*.axf
+*.hex
+
+# Ignore CMake cache and build files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Ignore SDK configuration backups and logs
+sdkconfig
+sdkconfig.old
+sdkconfig.ci
+sdkconfig.*.bak
+config/sdkconfig.h
+
+
+# Ignore Python-related files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore temporary files and logs
+*.tmp
+*.swp
+*.swo
+*.swn
+*.DS_Store
+*.log
+*.pid
+*.seed
+*.gz
+*.tar
+
+# Ignore ESP-IDF specific build files
+sdkconfig.ci
+sdkconfig.defaults
+sdkconfig.build
+flash_args
+partition_table/
+bootloader/
+
+# Ignore ESP-IDF Python virtual environment
+python_env/
+.venv/
+env/
+venv/
+
+# Ignore user-specific files
+*.iml
+.idea/
