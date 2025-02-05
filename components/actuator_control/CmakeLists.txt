@@ -1,0 +1,3 @@
+idf_component_register(SRCS "actuator_control.c"
+                       REQUIRES freertos driver
+                       INCLUDE_DIRS ".")
