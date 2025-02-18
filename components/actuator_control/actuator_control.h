@@ -18,7 +18,9 @@
 
 #define ANGLE_STEP  2   // Incremental step (in degrees) when moving toward 45°
 #define DELAY_MS    5   // Delay between each incremental step (in ms)
-#define HOLD_DELAY 2000 // Hold delay in ms (2 seconds)
+#define HOLD_DELAY 5000 // Hold delay in ms (5 seconds)
+#define RELEASE_DELAY 1000 // Hold delay in ms (1 seconds)
+
 
 // Convert angle (0-180°) to duty cycle value
 uint32_t angle_to_duty(int angle);
