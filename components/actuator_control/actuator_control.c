@@ -42,7 +42,7 @@ void servo_init(void) {
 void servo_step_task(void *arg) {
     while (1) {
         // Gradually move from 0° to 45°
-        for (int angle = 0; angle <= 137; angle += ANGLE_STEP) {
+        for (int angle = 0; angle <= 150; angle += ANGLE_STEP) {
             uint32_t duty = angle_to_duty(angle);
             ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, duty);
             ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
