@@ -5,10 +5,11 @@
     "idf.openOcdConfigs": [
         "board/esp32c6-builtin.cfg"
     ],
-    "idf.port": "/dev/tty.usbmodem1101",
+    "idf.port": "/dev/tty.usbserial-1120",
     "idf.flashType": "UART",
     "files.associations": {
         "esp_system.h": "c",
-        "sdkconfig.h": "c"
+        "sdkconfig.h": "c",
+        "actuator_control.h": "c"
     }
 }
