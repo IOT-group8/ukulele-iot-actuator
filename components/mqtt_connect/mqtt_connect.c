@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "mqtt_client.h"
 #include "esp_log.h"
-#include "esp_event.h"  
+#include "esp_event.h"
 #include "nvs_flash.h"
+#include "mqtt_client.h"
 #include "wifi_connect.h"
 
 static const char *TAG = "MQTT";
@@ -17,7 +17,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     switch (event->event_id) {
         case MQTT_EVENT_CONNECTED:
             ESP_LOGI(TAG, "MQTT Connected!");
-            esp_mqtt_client_subscribe(client, MQTT_TOPIC, 1);  // Subscribe to topic
+            esp_mqtt_client_subscribe(client, MQTT_TOPIC, 1);
             ESP_LOGI(TAG, "Subscribed to topic: %s", MQTT_TOPIC);
             break;
 
@@ -36,12 +36,12 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
 }
 
 void mqtt_app_start(void) {
-    esp_mqtt_client_config_t mqtt_cfg = {
-        .broker.address.uri = MQTT_BROKER_URI,
+    const esp_mqtt_client_config_t mqtt_cfg = {
+        .broker.address.uri = MQTT_BROKER_URI,  // Correct field assignment
     };
 
     esp_mqtt_client_handle_t client = esp_mqtt_client_init(&mqtt_cfg);
-    esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, client);
+    esp_mqtt_client_register_event(client, MQTT_EVENT_ANY, mqtt_event_handler, client);
     esp_mqtt_client_start(client);
 
     ESP_LOGI(TAG, "MQTT client started...");
