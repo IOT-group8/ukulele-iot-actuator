@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include "mqtt_client.h"
 #include "esp_log.h"
+#include "esp_event.h"  
+#include "nvs_flash.h"
+#include "wifi_connect.h"
 
 static const char *TAG = "MQTT";
 
-#define MQTT_BROKER_URI "mqtt://broker.hivemq.com"  // Change this to your MQTT broker
-#define MQTT_TOPIC "esp32/ukulele"                  // Topic to subscribe to
+#define MQTT_BROKER_URI "mqtt://192.168.189.69"  // Change this to your MQTT broker
+#define MQTT_TOPIC "sensor/raw"                  // Topic to subscribe to
 
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) {
     esp_mqtt_event_handle_t event = event_data;
@@ -34,7 +37,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
 
 void mqtt_app_start(void) {
     esp_mqtt_client_config_t mqtt_cfg = {
-        .uri = MQTT_BROKER_URI,
+        .broker.address.uri = MQTT_BROKER_URI,
     };
 
     esp_mqtt_client_handle_t client = esp_mqtt_client_init(&mqtt_cfg);
