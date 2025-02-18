@@ -62,3 +62,5 @@ venv/
 # Ignore user-specific files
 *.iml
 .idea/
+
+dependencies.lock
