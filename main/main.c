@@ -5,10 +5,11 @@
 #include "wifi_connect.h"
 
 void app_main(void) {
-
-
+    // Initialize Wi-Fi
     wifi_init_sta();
 
+    // Initialize MQTT
+    mqtt_app_start();
 
     // Initialize the servo
     servo_init();
