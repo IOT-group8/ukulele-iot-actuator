@@ -1,3 +1,0 @@
-idf_component_register(SRCS "mqtt_client.c" "wifi_connect.c"
-                       REQUIRES freertos driver esp_wifi nvs_flash
-                       INCLUDE_DIRS ".")

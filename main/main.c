@@ -3,12 +3,14 @@
 #include "freertos/task.h"
 #include "actuator_control.h"
 #include "wifi_connect.h"
+#include "mqtt_connect.h"
 
 void app_main(void) {
-
-
+    // Initialize Wi-Fi
     wifi_init_sta();
 
+    // Initialize MQTT
+    mqtt_app_start();
 
     // Initialize the servo
     servo_init();
