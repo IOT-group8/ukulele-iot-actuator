@@ -1,0 +1,3 @@
+idf_component_register(SRCS "firebase_http.c"
+                       REQUIRES freertos driver esp_http_client
+                       INCLUDE_DIRS ".")
