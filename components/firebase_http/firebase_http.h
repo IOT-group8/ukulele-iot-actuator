@@ -1,6 +1,9 @@
 #ifndef FIREBASE_HTTP_H
 #define FIREBASE_HTTP_H
 
-void start_firebase_subscription();
+#include "firebase_config.h"
 
-#endif
+void firebase_send_data(const char *topic, float temperature, float humidity);
+void firebase_fetch_data(const char *topic);
+
+#endif // FIREBASE_HTTP_H
